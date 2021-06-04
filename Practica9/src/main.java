@@ -1,23 +1,28 @@
 
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(float cantidad) {
 		// TODO Auto-generated method stub
-        CCuenta miCuenta;
+        CCuenta cuentaUno;
 
         double saldoActual;
 
 
-        miCuenta = new CCuenta("Antonio López","1000-2365-85-1230456789",2500,0);
+        cuentaUno = new CCuenta("Antonio López","1000-2365-85-1230456789",2500,0);
 
-        saldoActual = miCuenta.estado();
+        saldoActual = cuentaUno.estado();
 
         System.out.println("El saldo actual es"+ saldoActual );
 
 
-        try {
+        operaCuenta(cuentaUno);
 
-            miCuenta.retirar(2300);
+    }
+
+	private static void operaCuenta(CCuenta cuentaUno) {
+		try {
+
+            cuentaUno.retirar(2300);
 
         } catch (Exception e) {
 
@@ -29,15 +34,14 @@ public class main {
 
             System.out.println("Ingreso en cuenta");
 
-            miCuenta.ingresar(695);
+            cuentaUno.ingresar(695);
 
         } catch (Exception e) {
 
             System.out.print("Fallo al ingresar");
 
         }
-
-    }
+	}
 
 	}
 
